@@ -2,6 +2,11 @@
 
 ---
 
+## Acronym
+1. cidr - classless inter-domain routing
+
+---
+
 ## Diagram
 [<img src="https://i.imgur.com/eMjLZ5z.png">](https://i.imgur.com/eMjLZ5z.png)
 
