@@ -12,11 +12,17 @@ data "aws_ssm_parameter" "ami" {
 
 # INSTANCES #
 resource "aws_instance" "nginx" {
+  # EC@
   count                  = var.instance_count
   ami                    = nonsensitive(data.aws_ssm_parameter.ami.value)
   instance_type          = var.instance_type
+  
+  # Network
   subnet_id              = module.vpc.public_subnets[(count.index % var.vpc_subnet_count)]
   vpc_security_group_ids = [aws_security_group.nginx-sg.id]
+  
+  # s3
+  # s3 - iam ?
   iam_instance_profile   = module.web_app_s3.instance_profile.name
   depends_on             = [module.web_app_s3]
 
