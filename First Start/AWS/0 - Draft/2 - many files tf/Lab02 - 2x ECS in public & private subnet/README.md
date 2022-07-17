@@ -14,4 +14,5 @@
     * Publics: 10.56.1.0/24
     * Privates: 
 3. EC2s
+    * ami: Amazon Linux 2
     * userdata: nginx
