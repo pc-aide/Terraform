@@ -16,3 +16,5 @@
 3. EC2s
     * ami: Amazon Linux 2
     * userdata: nginx
+4. Outputs terraform
+    * nginx public dns
