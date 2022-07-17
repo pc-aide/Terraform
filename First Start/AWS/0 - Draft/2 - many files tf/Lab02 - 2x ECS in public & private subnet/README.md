@@ -1,4 +1,4 @@
-# Lab01 - 2x ECS in public & private subnet
+# Lab02 - 2x ECS in public & private subnet
 
 ---
 
