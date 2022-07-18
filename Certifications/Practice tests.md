@@ -1,4 +1,4 @@
-# Practice test
+# Practice tests
 
 ---
 
