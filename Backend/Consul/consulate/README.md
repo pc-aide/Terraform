@@ -45,6 +45,7 @@ out-file bk_backend_consul.json
 # (optional) get-content
 cat bk_backend_consul.json
 
+# Restore
 # scope restore: only k/v, not the (e.g) acl\Tokens
 # acl - access control list (e.g. users, bootstrap)
 cat bk_backend_consul.json |
