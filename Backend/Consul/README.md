@@ -7,6 +7,20 @@
 
 ---
 
+## Diagram
+1. networking
+   * state/<networking.Name> = terraform.tfstate
+   * workspace/config
+3. applications
+   * state
+   * workspace/config
+
+[<img src="https://i.imgur.com/PTbIVPc.png">](https://i.imgur.com/PTbIVPc.png)
+
+
+
+---
+
 ## Table
 |n|name|e.g.|O/P|
 |-|----|----|---|
