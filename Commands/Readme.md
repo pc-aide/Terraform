@@ -6,12 +6,13 @@
 |n|name|e.g.|O/P|
 |-|----|----|---|
 |1|list resources id|terraform state list|[<img src="https://i.imgur.com/1JjapbW.png">](https://i.imgur.com/1JjapbW.png)|
-|2|show|# to know your resource - juste liste before <br/> terraform state show 'aws_instance.nginx1'| [<img src="https://i.imgur.com/eZedie7.png">](https://i.imgur.com/eZedie7.png) |
+|2|show|# to know your resource - juste liste before <br/><br/> terraform state show 'aws_instance.nginx1'| [<img src="https://i.imgur.com/eZedie7.png">](https://i.imgur.com/eZedie7.png) |
 |3|move item <br/> move to another address |terraform state mv <source> <destination>||
 |4|remove item|terraform state rm <resource>||
 |5|format|# optional : -recursive <br/>terraform fmt|[<img src="https://i.imgur.com/5EUYLzp.png">](https://i.imgur.com/5EUYLzp.png)<br/> after format:<br/>[<img src="https://i.imgur.com/Lfukdly.png">](https://i.imgur.com/Lfukdly.png)|
 |6|pull|# output current state to stdOut <br/><br/> terraform state pull|[<img src="https://i.imgur.com/Cu6KoOM.png">](https://i.imgur.com/Cu6KoOM.png)|
 |7|push|# update remote state from local<br/><br/> terraform state push||
+|8|graph|terrform graph|[<img src="https://i.imgur.com/P869VT5.png">](https://i.imgur.com/P869VT5.png)|
 
 ---
 
