@@ -50,7 +50,7 @@ cat bk_backend_consul.json
 cat bk_backend_consul.json |
 consulate --datacenter dc1 --token f8a6aa3f-bd45-b775-f3bc-c269ce909f59 kv restore
 
-# checUp after restore with listing
+# checkUp after restore with listing
 consulate --datacenter dc1 --token f8a6aa3f-bd45-b775-f3bc-c269ce909f59 kv ls
 
 applications/configuration/
