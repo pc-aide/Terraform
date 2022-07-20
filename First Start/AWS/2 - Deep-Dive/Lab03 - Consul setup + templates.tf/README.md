@@ -4,9 +4,10 @@
 
 ## Acronym
 1. ACL - Access Control (consul)
-2. nat - network address translation
-3. gw - gateway
-4. k/v - key-value
+2. bk - backup
+3. nat - network address translation
+4. gw - gateway
+5. k/v - key-value
 
 ---
 
