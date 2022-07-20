@@ -15,6 +15,24 @@
 
 ---
 
+## consulate
+````ps1
+# bk_m5_kv_consul.json :
+# ls --list
+paul> consulate --datacenter dc1 --token 7de9bbab-5b7f-ab1d-86be-3a5bceca8403 kv ls
+
+applications/configuration/
+applications/state/
+networking/configuration/
+networking/configuration/globo-primary/common_tags
+networking/configuration/globo-primary/net_info
+networking/state/
+networking/state/globo-primary
+PS C:\Users\paul>
+````
+
+---
+
 ## Diagram
 [<img src="https://i.imgur.com/cnl3BuD.png">](https://i.imgur.com/cnl3BuD.png)
 
