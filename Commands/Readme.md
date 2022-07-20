@@ -10,6 +10,7 @@
 |3|format|# optional : -recursive <br/>terraform fmt|[<img src="https://i.imgur.com/5EUYLzp.png">](https://i.imgur.com/5EUYLzp.png)<br/> after format:<br/>[<img src="https://i.imgur.com/Lfukdly.png">](https://i.imgur.com/Lfukdly.png)|
 |4|graph|terrform graph <br/><br/> # to testing: <br/> terraform graph \| dot -Tsvg > graph.svg|[<img src="https://i.imgur.com/P869VT5.png">](https://i.imgur.com/P869VT5.png)|
 |5|providers|terraform providers|[<img src="https://i.imgur.com/4aQMI50.png">](https://i.imgur.com/4aQMI50.png)|
+|6|taint|# next plan,apply the resource will be destroy,recreated <br/> # used that when userdata change <br/> # e.g.: new background for html <br/><br/> terraform taint aws_instance.nginx[0] | tainted : <br/> [<img src="https://i.imgur.com/FitfksS.png">](https://i.imgur.com/FitfksS.png) <br/> new modif in code html : <br/> [<img src="https://i.imgur.com/5g4QE4a.png">](https://i.imgur.com/5g4QE4a.png)|
   
 ---
   
