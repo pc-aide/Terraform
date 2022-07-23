@@ -33,7 +33,7 @@ variable "private_subnets" {
 }
 
 variable "subnet_count" {
-  default = 1
+  default = 2
 }
 
 # ref: intances.tf
