@@ -39,7 +39,7 @@ variable "subnet_count" {
 # ref: intances.tf
 variable "instance_count" {
   type        = number
-  default     = 1
+  default     = 2
   description = "Number of instances to create in VPC"
 }
 
