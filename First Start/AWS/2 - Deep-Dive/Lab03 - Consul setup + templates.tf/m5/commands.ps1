@@ -1,5 +1,5 @@
 # Go into consul subfolder
-mkdir 5\consul # if not exist, create it into m5 folder
+mkdir m5\consul # if not exist, create it into m5 folder
 cd .\consul
 
 # We are going to add config data to our Consul installation
