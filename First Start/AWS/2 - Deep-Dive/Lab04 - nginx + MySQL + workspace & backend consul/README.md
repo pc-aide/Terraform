@@ -26,7 +26,7 @@
 
 ### workspace
 #### development
-[<img src="https://i.imgur.com/WFU2NwY.png">](https://i.imgur.com/WFU2NwY.png)
+[<img src="https://i.imgur.com/KGLLjaK.png">](https://i.imgur.com/KGLLjaK.png)
 
 #### qa
 [<img src="https://i.imgur.com/NecXVve.png">](https://i.imgur.com/NecXVve.png)
