@@ -24,7 +24,12 @@
 
 ## Diagram
 
-### AWS Resources
+### workspace
+#### development
+[<img src="https://i.imgur.com/WFU2NwY.png">](https://i.imgur.com/WFU2NwY.png)
+
+#### qa
+[<img src="https://i.imgur.com/NecXVve.png">](https://i.imgur.com/NecXVve.png)
 
 
 ### backend consul
