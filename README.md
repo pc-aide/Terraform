@@ -24,3 +24,4 @@
 ## IaC vs CM
 1. eg. with terraform can create (provisioning) RDS\MySQL 
    * but can't create the tables, my schema inside my MySQL vs with Ansible, now it's possible for that (CM)
+2. CM tools like Ansible, Puppet, SaltStack, & Chef deploy software **into** **existing servers**
