@@ -3,11 +3,12 @@
 ---
 
 ## Acronym
-1. ami - amazon machine image
+1. azs - availablity zones
+2. ami - amazon machine image
 
 ---
 
-## Search
+## ami
 ### ami-amazon-linux
 |n|name|e.g.|O/P|
 |-|----|----|---|
@@ -17,8 +18,7 @@
 
 ---
 
-### ami-ubuntu-linux
-
----
-
-### ami-server-windows
+## availability zones
+|n|name|e.g.|O/P|
+|-|----|----|---|
+|1|default|# Declare the data source in network.tf <br/> # default state is available <br/> data "aws_availability_zones" "azs" {} <br/><br/> # module vpc : <br/> azs = slice(data.aws_availability_zones.azs.names, 0, var.subnet_count) | [<img src="https://i.imgur.com/hgniYcY.png">](https://i.imgur.com/hgniYcY.png) |
