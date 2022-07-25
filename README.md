@@ -3,8 +3,9 @@
 ---
 
 ## Acronym
-1. IaC - Infrastructure as Code
-2. CM - Configuration Management
+1. CM - Configuration Management
+2. IaC - Infrastructure as Code
+3. HCL - HashiCorp Configuration Language
 
 ---
 
