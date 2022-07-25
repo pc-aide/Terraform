@@ -28,3 +28,4 @@
 3. **CM** tools favor **mutable** infrastructure, whereas **terraform** & other provisioning tools favor **immutable**
    * **Mutable** infrastrcture means your perform software **updates** on **existing** servers
    * **Immutable** infrastructure, by **contrast**, doesn't care about existing servers - it treats infrastructure as a disposable commodity
+4. can be summarized as a **reussable** vs **disposable** mentality
