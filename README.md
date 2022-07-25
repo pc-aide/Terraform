@@ -22,5 +22,5 @@
 ---
 
 ## IaC vs CM
-1. eg. with terraform can create RDS\MySQL
-2. but can't create tables, my schema inside my MySQL vs with Ansible, now it's possible for that (CM)
+1. eg. with terraform can create (provisioning) RDS\MySQL 
+   * but can't create the tables, my schema inside my MySQL vs with Ansible, now it's possible for that (CM)
