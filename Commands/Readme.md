@@ -21,7 +21,7 @@
 |2|show|# to know your resource - juste liste before <br/><br/> terraform state show 'aws_instance.nginx1'| [<img src="https://i.imgur.com/eZedie7.png">](https://i.imgur.com/eZedie7.png) |
 |3|move item <br/> move to another address |terraform state mv <source> <destination>||
 |4|remove item|terraform state rm <resource>||
-|5|pull|# output current state to stdOut <br/><br/> terraform state pull|[<img src="https://i.imgur.com/Cu6KoOM.png">](https://i.imgur.com/Cu6KoOM.png)|
+|5|pull|# output current state to stdOut = **terraform.tfstate** <br/><br/> terraform state pull|[<img src="https://i.imgur.com/Cu6KoOM.png">](https://i.imgur.com/Cu6KoOM.png)|
 |6|push|# update remote state from local<br/><br/> terraform state push||
 
 ---
