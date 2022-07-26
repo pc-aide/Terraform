@@ -2,6 +2,11 @@
 
 ---
 
+## Acronym
+1. GCP - Google Cloud Platform
+
+---
+
 ## Table
 |n|name|e.g.|O/P|
 |-|----|----|---|
