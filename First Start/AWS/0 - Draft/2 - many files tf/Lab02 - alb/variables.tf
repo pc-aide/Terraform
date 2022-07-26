@@ -49,13 +49,13 @@ variable "instance_type" {
 }
 
 variable "instance_ami" {
-  type = string
-  default = "ami-0cff7528ff583bf9a"
+  type        = string
+  default     = "ami-0cff7528ff583bf9a"
   description = "Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type"
 }
 
 variable "enable_dns_hostnames" {
-  type = bool
-  default = true
+  type        = bool
+  default     = true
   description = "Enable DNS hostname in VPC"
 }
