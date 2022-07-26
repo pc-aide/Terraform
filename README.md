@@ -3,9 +3,10 @@
 ---
 
 ## Acronym
-1. CM - Configuration Management
-2. IaC - Infrastructure as Code
-3. HCL - HashiCorp Configuration Language
+1. API - Application Programming Interface
+2. CM - Configuration Management
+3. IaC - Infrastructure as Code
+4. HCL - HashiCorp Configuration Language
 
 ---
 
@@ -36,3 +37,8 @@
 ## Inputs & Outputs
 1. inputs are called **arguments**
 2. outputs ar called **attributes**
+
+---
+
+## Logic API
+[<img src="https://i.imgur.com/JteKqMW.png">](https://i.imgur.com/JteKqMW.png)
