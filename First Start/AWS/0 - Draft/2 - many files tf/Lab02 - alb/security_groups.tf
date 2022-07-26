@@ -27,14 +27,15 @@ resource "aws_security_group" "alb-sg" {
 resource "aws_security_group" "nginx-sg" {
   name   = "nginx-sg"
   vpc_id = module.vpc.vpc_id
-    
+
   # Inbound
   # Allow HTTP from alb-sg
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
     security_groups = [aws_security_group.alb-sg.id]
+    description     = "Allow HTTP from alb-sg"
   }
 
   # Outbound
