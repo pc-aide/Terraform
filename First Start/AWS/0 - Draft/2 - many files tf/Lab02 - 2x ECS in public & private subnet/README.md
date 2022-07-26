@@ -3,9 +3,10 @@
 ---
 
 ## Acronym
-1. lb - load balancer
-2. sg - security group
-3. tg - target groups
+1. ec2 - elastic compute cloud
+2. lb - load balancer
+3. sg - security group
+4. tg - target groups
 
 ---
 
@@ -68,3 +69,9 @@
 1. instances :
 
 [<img src="https://i.imgur.com/FtSjlfS.png">](https://i.imgur.com/FtSjlfS.png)
+
+
+---
+
+### ec2
+[<img src="https://i.imgur.com/DRL8mfj.png">](https://i.imgur.com/DRL8mfj.png)
