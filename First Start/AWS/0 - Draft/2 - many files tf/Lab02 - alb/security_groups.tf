@@ -27,6 +27,9 @@ resource "aws_security_group" "alb-sg" {
 resource "aws_security_group" "nginx-sg" {
   name   = "nginx-sg"
   vpc_id = module.vpc.vpc_id
+    
+  # Inbound
+  # security_groups = [aws_security_group.webapp_http_inbound_sg.id]
 
   # Outbound
   egress {
