@@ -30,3 +30,9 @@
    * **Mutable** infrastrcture means your perform software **updates** on **existing** servers
    * **Immutable** infrastructure, by **contrast**, doesn't care about existing servers - it treats infrastructure as a disposable commodity
 4. can be summarized as a **reussable** vs **disposable** mentality
+
+---
+
+## Inputs & Outputs
+1. inputs are called **arguments**
+2. outputs ar called **attributes**
