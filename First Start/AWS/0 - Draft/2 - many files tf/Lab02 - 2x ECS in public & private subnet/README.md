@@ -1,4 +1,4 @@
-# Lab02 - 2x ECS in public & private subnet
+# Lab02 - alb
 
 ---
 
@@ -11,7 +11,7 @@
 ---
 
 ## Diagram
-[<img src="https://i.imgur.com/b89yXrS.png">](https://i.imgur.com/b89yXrS.png)
+[<img src="https://i.imgur.com/DWaO8bu.png">](https://i.imgur.com/DWaO8bu.png)
 
 ---
 
