@@ -4,6 +4,8 @@
 
 ## Acronym
 1. lb - load balancer
+2. sg - security group
+3. tg - target groups
 
 ---
 
@@ -30,3 +32,39 @@
 1. dns name (lb)
 
 [<img src="https://i.imgur.com/vqpEqwF.png">](https://i.imgur.com/vqpEqwF.png)
+
+2. web browser <dns_name> :
+
+[<img src="https://i.imgur.com/KL7x5il.png">](https://i.imgur.com/KL7x5il.png)
+
+---
+
+### sg 
+#### nginx
+1. inbound :
+
+[<img src="blob:https://i.imgur.com/rLoWLo9.png">](https://i.imgur.com/rLoWLo9.png)
+
+2. outbound :
+
+[<img src="https://i.imgur.com/3cnjhFh.png">](https://i.imgur.com/3cnjhFh.png)
+
+---
+
+#### alb
+1. inbound :
+
+[<img src="https://i.imgur.com/Xr1Kqo7.png">](https://i.imgur.com/Xr1Kqo7.png)
+
+2. oubound : 
+
+[<img src="https://i.imgur.com/e75qVGH.png">](https://i.imgur.com/e75qVGH.png)
+
+---
+
+### tg
+[<img src="https://i.imgur.com/ekr5UoS.png">](https://i.imgur.com/ekr5UoS.png)
+
+1. instances :
+
+[<img src="https://i.imgur.com/FtSjlfS.png">](https://i.imgur.com/FtSjlfS.png)
