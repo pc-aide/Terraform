@@ -58,6 +58,15 @@ resource "aws_security_group" "nginx-sg" {
   name   = "nginx-sg"
   vpc_id = module.vpc.vpc_id
 
+  # Outbound
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Outbound internet access"
+  }
+
   tags = local.common_tags
 }
 
@@ -70,4 +79,5 @@ resource "aws_security_group_rule" "IN-HTTP-LB" {
   protocol                 = "tcp"
   source_security_group_id = aws_security_group.alb-sg.id
   security_group_id        = aws_security_group.nginx-sg.id
+  description              = "Allow HTTP from LB"
 }
