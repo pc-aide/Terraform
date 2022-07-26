@@ -43,7 +43,7 @@
 #### nginx
 1. inbound :
 
-[<img src="blob:https://i.imgur.com/rLoWLo9.png">](https://i.imgur.com/rLoWLo9.png)
+[<img src="https://i.imgur.com/rLoWLo9.png">](https://i.imgur.com/rLoWLo9.png)
 
 2. outbound :
 
