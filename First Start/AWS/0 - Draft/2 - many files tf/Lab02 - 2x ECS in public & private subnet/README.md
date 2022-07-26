@@ -2,6 +2,11 @@
 
 ---
 
+## Acronym
+1. lb - load balancer
+
+---
+
 ## Diagram
 [<img src="https://i.imgur.com/b89yXrS.png">](https://i.imgur.com/b89yXrS.png)
 
@@ -18,3 +23,10 @@
     * userdata: nginx
 4. Outputs terraform
     * nginx public dns
+
+---
+
+## Outputs
+1. dns name (lb)
+
+[<img src="https://i.imgur.com/vqpEqwF.png">](https://i.imgur.com/vqpEqwF.png)
