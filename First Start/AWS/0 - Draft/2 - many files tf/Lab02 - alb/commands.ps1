@@ -7,7 +7,7 @@ terraform.exe init
 # Validate
 terraform.exe validate
 
-# code format
+# Code format
 terraform.exe fmt -recursive
 
 # Plan
