@@ -42,3 +42,9 @@
 
 ## Logic API
 [<img src="https://i.imgur.com/JteKqMW.png">](https://i.imgur.com/JteKqMW.png)
+
+---
+
+## Summary
+1. terraform doesn't do everything
+   * for cm tool, use for example, ansible 
