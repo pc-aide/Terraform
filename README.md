@@ -48,3 +48,5 @@
 ## Summary
 1. terraform doesn't do everything
    * for cm tool, use for example, ansible 
+2. hashiCorp familly
+   * Vault, consul, nomad
