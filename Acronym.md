@@ -10,3 +10,4 @@
 |3|OSS|Open Source Software|terraform OSS||
 |4|EOT|End Of Topic|resource "local_file" "literature" { <br/> &ensp; filename = "art_of_war.txt" <br/> &ensp; content = <<- EOT <br/> &ensp;&ensp; Sun Tzu said : the art of war is of viatal importance to the state <br/> EOT <br/> }|
 |5|CI/CD|Continuous Integration & continuous development|eg.: jenkins, codePipeline (AWS), Bamboo||
+|6|TFVC|# centralized version control system <br/> # e.g.: git, subversion, etc <br/>Team Foundation Version Control||
