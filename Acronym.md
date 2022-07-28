@@ -12,3 +12,4 @@
 |5|CI/CD|Continuous Integration & continuous development|eg.: jenkins, codePipeline (AWS), Bamboo||
 |6|TFVC|# centralized version control system <br/> # e.g.: git, subversion, etc <br/><br/>Team Foundation Version Control||
 |7|SCM|# concept of the Industrial engineering<br/> # centralized management of the flow of goods and services and includes all processes that transform raw materials into final products <br/><br/> Supply chain management
+|8|lts|long term service|docker pull jenkins/jenkins:lts||
