@@ -15,6 +15,7 @@
 |3|Input|# No prompt input <br/> TF_INPUT = False||
 |4|var|TF_VAR_name = "value"||
 |5||TF_CLI_ARGS = "-input=false"||
+|6|consul|TF_VAR_consul_address = "host.docker.internal"||
 
 ---
 
