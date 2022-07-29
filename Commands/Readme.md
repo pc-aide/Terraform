@@ -12,6 +12,7 @@
 |5|providers|terraform providers|[<img src="https://i.imgur.com/4aQMI50.png">](https://i.imgur.com/4aQMI50.png)|
 |6|taint|# next plan,apply the resource will be destroy,recreated <br/> # used that when userdata change <br/> # e.g.: new background for html <br/><br/> terraform taint aws_instance.nginx[0] | tainted : <br/> [<img src="https://i.imgur.com/FitfksS.png">](https://i.imgur.com/FitfksS.png) <br/> new modif in code html : <br/> [<img src="https://i.imgur.com/5g4QE4a.png">](https://i.imgur.com/5g4QE4a.png)|
 |7|plan|# optional: -parallelism=n      Limit the number of concurrent operations. Defaults to 10. <br/> <br/>terraform plan||
+|8|force-unlock|terraform force-unlock||
   
 ---
   
