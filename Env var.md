@@ -22,5 +22,5 @@
 ## Log
 |n|name|e.g.|O/P|
 |-|----|----|---|
-|1|TF_LOG|# use blank to remove the verbose <br/> # INFO,<br/> #TRACE --highest verbosity logs,<br/> #WARN, etc <br/><br/>$env:TF_LOG = "INFO"|trace : <br/> [<img src="https://i.imgur.com/yYf9qVq.png">](https://i.imgur.com/yYf9qVq.png) <br/> info : <br/> [<img src="https://i.imgur.com/ACs0NkB.png">](https://i.imgur.com/ACs0NkB.png)|
+|1|TF_LOG|# use blank to remove the verbose <br/> # INFO,<br/> # TRACE --highest verbosity logs,<br/> # WARN, etc <br/><br/>$env:TF_LOG = "INFO"|trace : <br/> [<img src="https://i.imgur.com/yYf9qVq.png">](https://i.imgur.com/yYf9qVq.png) <br/> info : <br/> [<img src="https://i.imgur.com/ACs0NkB.png">](https://i.imgur.com/ACs0NkB.png)|
 |2|path|TF_LOG_PATH = "tf_log_MMDDYY_hhmmss"||
