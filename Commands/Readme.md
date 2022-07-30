@@ -14,6 +14,7 @@
 |7|plan|# optional: -parallelism=n      Limit the number of concurrent operations. Defaults to 10. <br/> <br/>terraform plan||
 |8|force-unlock|terraform force-unlock||
 |9|refresh|# if we change manually : <br/> Tsun Mang for ->  Napoleon Bonaparte<br/> our terraform apply will warning our id not same as orig<br/> # overwrite manually modif for come back to the orig config<br/><br/> terraform refresh|orig: <br/> [<img src="https://i.imgur.com/yXUKcmF.png">](https://i.imgur.com/yXUKcmF.png) <br/> manually modif : <br/> [<img src="https://i.imgur.com/bis1GbD.png">](https://i.imgur.com/bis1GbD.png) <br/> if terraform apply again - warning : <br/> [<img src="https://i.imgur.com/vxKxFV3.png">](https://i.imgur.com/vxKxFV3.png) <br/> terraform refresh: <br/> our id : <br/> [<img src="https://i.imgur.com/J60yZac.png">](https://i.imgur.com/J60yZac.png) <br/> come back to the orig: <br/> [<img src="https://i.imgur.com/LZT0QNN.png">](https://i.imgur.com/LZT0QNN.png)  |
+|10|show|terraform show|[<img src="https://i.imgur.com/yQ4D9nJ.png">](https://i.imgur.com/yQ4D9nJ.png)|
   
 ---
   
