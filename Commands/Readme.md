@@ -13,6 +13,7 @@
 |6|taint|# next plan,apply the resource will be destroy,recreated <br/> # used that when userdata change <br/> # e.g.: new background for html <br/><br/> terraform taint aws_instance.nginx[0] | tainted : <br/> [<img src="https://i.imgur.com/FitfksS.png">](https://i.imgur.com/FitfksS.png) <br/> new modif in code html : <br/> [<img src="https://i.imgur.com/5g4QE4a.png">](https://i.imgur.com/5g4QE4a.png)|
 |7|plan|# optional: -parallelism=n      Limit the number of concurrent operations. Defaults to 10. <br/> <br/>terraform plan||
 |8|force-unlock|terraform force-unlock||
+|9|refresh|# if we change manually : <br/> Tsun Mang for ->  Napoleon Bonaparte<br/> our terraform apply will warning our id not same as orig<br/> # overwrite manually modif for come back to the orig config<br/><br/> terraform refresh|orig: <br/> [<img src="https://i.imgur.com/yXUKcmF.png">](https://i.imgur.com/yXUKcmF.png) <br/> manually modif : <br/> [<img src="https://i.imgur.com/bis1GbD.png">](https://i.imgur.com/bis1GbD.png) <br/> if terraform apply again - warning : <br/> [<img src="https://i.imgur.com/vxKxFV3.png">](https://i.imgur.com/vxKxFV3.png) <br/> terraform refresh: <br/> our id : <br/> [<img src="https://i.imgur.com/J60yZac.png">](https://i.imgur.com/J60yZac.png) <br/> come back to the orig: <br/> [<img src="https://i.imgur.com/LZT0QNN.png">](https://i.imgur.com/LZT0QNN.png)  |
   
 ---
   
