@@ -3,6 +3,7 @@
 ---
 
 ## Acronym
+1. IAM - Identity & access manager
 
 ---
 
