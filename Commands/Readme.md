@@ -5,6 +5,7 @@
 ## Basic
 |n|name|e.g.|O/P|
 |-|----|----|---|
+|0|comment| # single comment <br/>/* & */ long comment <br/> // note ?||
 |1|init (local)|# Preparation to migration terraform.tfstate to consul<br/><br/>terraform init<br/>terraform plan -out consul.tfplan <br/> terraform apply conslul.tfplan |[<img src="https://i.imgur.com/70EMD7K.png">](https://i.imgur.com/70EMD7K.png)|
 |2|consul (remote)|# terraform.tfstate is in remote host (config) <br/><br/>terraform init -bakcend-config=path=networking/state/globo-primary<br/>terraform plan out config.tfplan <br/> terraform apply config.tfplan|[<img src="https://i.imgur.com/pe3pPKi.png">](https://i.imgur.com/pe3pPKi.png)|
 |3|format|# optional : -recursive <br/>terraform fmt|[<img src="https://i.imgur.com/5EUYLzp.png">](https://i.imgur.com/5EUYLzp.png)<br/> after format:<br/>[<img src="https://i.imgur.com/Lfukdly.png">](https://i.imgur.com/Lfukdly.png)|
