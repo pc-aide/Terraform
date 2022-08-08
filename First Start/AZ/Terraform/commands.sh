@@ -5,9 +5,14 @@ az account clear
 read -p "Your email: " email
 az login -u $email
 
+# code format
+terraform fmt
 
 # init
 terraform init
+
+# validate
+terraform validate
 
 # plan
 terraform plan -out lab.tfplan
