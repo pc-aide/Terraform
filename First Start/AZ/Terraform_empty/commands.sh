@@ -5,7 +5,7 @@ az account clear
 read -p "Your email: " email && az login -u $email
 
 # code format
-terraform fmt
+terraform fmt -recursive
 
 # init
 terraform init
