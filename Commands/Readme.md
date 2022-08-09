@@ -17,6 +17,7 @@
 |9|refresh|# if we change manually : <br/> Tsun Mang for ->  Napoleon Bonaparte<br/> our terraform apply will warning our id not same as orig<br/> # overwrite manually modif for come back to the orig config<br/><br/> terraform refresh|orig: <br/> [<img src="https://i.imgur.com/yXUKcmF.png">](https://i.imgur.com/yXUKcmF.png) <br/> manually modif : <br/> [<img src="https://i.imgur.com/bis1GbD.png">](https://i.imgur.com/bis1GbD.png) <br/> if terraform apply again - warning : <br/> [<img src="https://i.imgur.com/vxKxFV3.png">](https://i.imgur.com/vxKxFV3.png) <br/> terraform refresh: <br/> our id : <br/> [<img src="https://i.imgur.com/J60yZac.png">](https://i.imgur.com/J60yZac.png) <br/> come back to the orig: <br/> [<img src="https://i.imgur.com/LZT0QNN.png">](https://i.imgur.com/LZT0QNN.png)  |
 |10|show|terraform show|[<img src="https://i.imgur.com/yQ4D9nJ.png">](https://i.imgur.com/yQ4D9nJ.png)|
 |11|configuration drift| # checkUp any cfg drift <br/> terraform plan -refresh-only <br/> or <br/> terraform apply -refresh-only||
+|12|apply|terraform apply -replace=azurerm_virtual_network.vnet|[<img src="https://i.imgur.com/7UQnmYb.png">](https://i.imgur.com/7UQnmYb.png)|
   
 ---
   
