@@ -1,4 +1,4 @@
-# 1 - 2x subnets
+# 1 - 2x subnets from module vnet
 
 ---
 
