@@ -1,4 +1,4 @@
-# 1 - main_vnet
+# 1 - 2x subnets
 
 ---
 
