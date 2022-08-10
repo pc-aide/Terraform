@@ -1,3 +1,6 @@
+# CleanUp
+az account clear
+
 # Creds
 ($email = read-host "email: ") -and (az login -u $email)
 
