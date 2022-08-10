@@ -16,10 +16,20 @@ $URL_vsCode = "https://master.dl.sourceforge.net/project/terraform/vsCode/1.69/V
 $URL_gitx64 = "https://master.dl.sourceforge.net/project/terraform/Git/Git-2.37.0-64-bit.exe?viasf=1"
 $URL_AWSCLIV2 = "https://master.dl.sourceforge.net/project/terraform/AWS_CLI/AWSCLIV2.msi?viasf=1"
 $URL_CONSUL = "https://master.dl.sourceforge.net/project/terraform/Consul%20-%20win%20bin/1.12.2/consul.exe?viasf=1"
+$URL_azcli = "https://master.dl.sourceforge.net/project/terraform/az_cli/v2.39/azure-cli-2.39.0.msi?viasf=1"
 
 ################
 # FIlES in D:\ #
 ################
+
+# az_cli_v2_msi
+try{
+  start-BitsTransfer $URL_azcli `
+  -destination "d:\azcli.msi"
+}
+catch{
+  $_ | out-file "d:\ErrorDownloadAzcliv2.txt"
+}
 
 # AWS_cli_v2_msi
 try{
@@ -53,9 +63,17 @@ catch {
 # INSTALL APPS #
 ################
 
+# az_cli_v2_mis
+try{
+  start msiExec -args "/i d:\azcli.msi /q /noRestart /l*v d:\installAzCliv2.log" -wait
+}
+catch{
+  $_ | out-file "d:\ErrorInstallAzCliv2.log"
+}
+
 # AWS_cli_v2_msi
 try{
-	start msiExec -args "/i d:\awscliv2.msi /q /norestart /l*v d:\installAwsCliv2.log" -wait
+	start msiExec -args "/i d:\awscliv2.msi /q /noRestart /l*v d:\installAwsCliv2.log" -wait
 }
 catch{
 	$_ | out-file "d\ErrorInstallAwsCliV2.log"
