@@ -15,3 +15,4 @@
 |-|----|-----|--|---|
 |1|<br/>lifecyle block <br/><br/><ins> other opt:</ins><br/>prevent_destroy (bool)<br/>ignore_changes (list of attributes)||resource "azurerm_resource_group" "example" { <br/> &ensp; # ... <br/> <br/> &ensp; lifecycle { <br/> &ensp; &ensp; create_before_destroy = true <br/> &ensp; } <br/> }||
 |2|alias|
+|3|depends_on|
