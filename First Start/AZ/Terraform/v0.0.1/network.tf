@@ -7,6 +7,8 @@ resource "azurerm_virtual_network" "vnet" {
   # cidr
   name          = var.vnet_name
   address_space = [var.vnet_cidr]
+
+  depends_on = [azurerm_resource_group.rg_terraform]
 }
 
 # public subnet
