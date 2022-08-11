@@ -16,4 +16,6 @@ resource "azurerm_network_security_group" "sg_rdp" {
     destination_address_prefix = "*"
     description                = "Allow inbound RDP"
   }
+
+  depends_on = [azurerm_resource_group.rg_terraform]
 }
