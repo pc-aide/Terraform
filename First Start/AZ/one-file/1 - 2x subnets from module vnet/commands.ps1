@@ -1,23 +1,25 @@
-# CleanUp
+# account cleanUp
 az account clear
 
-# Creds
-($email = read-host "email: ") -and (az login -u $email)
-
-# Load module,providers,plugings,etc
-terraform init
+# creds
+read -p "Your email: " email && az login -u $email
 
 # code format
-terraform fmt
+terraform fmt -recursive
+
+# init
+terraform init
 
 # validate
 terraform validate
 
 # graph with graphviz (dot)
+# dot -V --to test if command working
+# O/P: dot - graphviz version 2.43.0 (0)
 terraform graph | dot -Tsvg > graph.svg
 
 # plan
-terraform plan -var rg_name=lab -out lab.tfplan
+terraform plan -out lab.tfplan
 
 # deploy
 terraform apply lab.tfplan
