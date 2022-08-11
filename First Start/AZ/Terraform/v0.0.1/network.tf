@@ -32,6 +32,8 @@ resource "azurerm_public_ip" "pip_vm" {
   allocation_method = "Dynamic"
 
   domain_name_label = var.vm_name
+
+  depends_on = [azurerm_resource_group.rg_terraform]
 }
 
 # vm-nic
