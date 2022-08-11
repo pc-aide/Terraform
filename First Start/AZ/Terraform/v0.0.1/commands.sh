@@ -13,6 +13,9 @@ terraform init
 # validate
 terraform validate
 
+# graph with graphviz (dot)
+terraform graph | dot -Tsvg > graph.svg
+
 # plan
 terraform plan -out lab.tfplan
 
