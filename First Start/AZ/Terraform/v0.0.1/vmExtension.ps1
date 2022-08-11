@@ -85,7 +85,7 @@ catch {
 
 # python msi
 try{
-	start msiExec -args "/i d:\python.msi ALLUSERS=1 /q /norestart /l*v d:\installPython2_7.txt"
+	start msiExec -args "/i d:\python.msi ALLUSERS=1 /q /norestart /l*v d:\installPython2_7.txt" -wait
 }
 catch{
 	$_ | out-file "d:\ErrorInstPython.txt"
