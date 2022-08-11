@@ -13,6 +13,9 @@ terraform fmt
 # validate
 terraform validate
 
+# graph with graphviz (dot)
+terraform graph | dot -Tsvg > graph.svg
+
 # plan
 terraform plan -var rg_name=lab -out lab.tfplan
 
