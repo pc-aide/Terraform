@@ -18,10 +18,20 @@ $URL_AWSCLIV2 = "https://master.dl.sourceforge.net/project/terraform/AWS_CLI/AWS
 $URL_CONSUL = "https://master.dl.sourceforge.net/project/terraform/Consul%20-%20win%20bin/1.12.2/consul.exe?viasf=1"
 $URL_azcli = "https://master.dl.sourceforge.net/project/terraform/az_cli/v2.39/azure-cli-2.39.0.msi?viasf=1"
 $URL_grahviz = "https://master.dl.sourceforge.net/project/terraform/Apps/graphviz/v5.0.0/windows_10_cmake_Release_graphviz-install-5.0.0-win64.exe?viasf=1"
+$URL_python = "https://master.dl.sourceforge.net/project/terraform/Apps/python/v2.7.18/python-2.7.18.amd64.msi?viasf=1"
 
 ################
 # FIlES in D:\ #
 ################
+
+# python 2.7.18 msi
+try{
+	start-BitsTransfer $URL_python `
+	-destination "d:\python.msi"
+}
+catch{
+	$_ | out-file "d:\ErrorDlPython.txt"
+}
 
 # graphviz_nullsoft (installer)
 try{
@@ -72,6 +82,14 @@ catch {
 ################
 # INSTALL APPS #
 ################
+
+# python msi
+try{
+	start msiExec -args "/i d:\python2_7.msi ALLUSERS=1 /q /norestart /l*v d:\installPython2_7.txt"
+}
+catch{
+	$_ | out-file "d:\ErrorInstPython.txt"
+}
 
 # graphviz
 try{
