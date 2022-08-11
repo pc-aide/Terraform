@@ -17,10 +17,20 @@ $URL_gitx64 = "https://master.dl.sourceforge.net/project/terraform/Git/Git-2.37.
 $URL_AWSCLIV2 = "https://master.dl.sourceforge.net/project/terraform/AWS_CLI/AWSCLIV2.msi?viasf=1"
 $URL_CONSUL = "https://master.dl.sourceforge.net/project/terraform/Consul%20-%20win%20bin/1.12.2/consul.exe?viasf=1"
 $URL_azcli = "https://master.dl.sourceforge.net/project/terraform/az_cli/v2.39/azure-cli-2.39.0.msi?viasf=1"
+$URL_grahviz = "https://master.dl.sourceforge.net/project/terraform/Apps/graphviz/v5.0.0/windows_10_cmake_Release_graphviz-install-5.0.0-win64.exe?viasf=1"
 
 ################
 # FIlES in D:\ #
 ################
+
+# graphviz_nullsoft (installer)
+try{
+  start-BitsTransfer $URL_grahviz `
+  -destination "d:\graphviz.exe"
+}
+catch{
+  $_ | out-file "d:\ErrorDlGrahviz.txt"
+}
 
 # az_cli_v2_msi
 try{
@@ -63,7 +73,15 @@ catch {
 # INSTALL APPS #
 ################
 
-# az_cli_v2_mis
+# graphviz
+try{
+  start "d:\graphviz.exe" -args "/S" -wait
+}
+catch{
+  $_ | out-file "d:\ErrorInstGrahviz.txt"
+}
+
+# az_cli_v2_msi
 try{
   start msiExec -args "/i d:\azcli.msi /q /noRestart /l*v d:\installAzCliv2.log" -wait
 }
@@ -122,7 +140,9 @@ catch{
 $OLDPATH = [System.Environment]::GetEnvironmentVariable('PATH','machine')
 $terraform = "C:\terraform"
 $Consul = "C:\Consul\"
-$NEWPATH = "$OLDPATH;$terraform;$Consul"
+# graphviz (ex: dot)
+$graphviz = "C:\Program Files\Graphviz\bin"
+$NEWPATH = "$OLDPATH;$terraform;$Consul;$graphviz"
 [Environment]::SetEnvironmentVariable("PATH", "$NEWPATH", "Machine")
 
 
