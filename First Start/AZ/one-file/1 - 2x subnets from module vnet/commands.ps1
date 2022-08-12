@@ -2,7 +2,7 @@
 az account clear
 
 # creds
-read -p "Your email: " email && az login -u $email
+($email = read-host "email: ") -and (az login -u $email)
 
 # code format
 terraform fmt -recursive
