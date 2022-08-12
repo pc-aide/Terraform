@@ -12,4 +12,13 @@
 
 ---
 
-## graph
+## output
+````tf
+terraform output
+````
+````outputs
+subnet_id = [
+  "/subscriptions/5a2cc279-c017-4d8a-8af0-e800c865db0c/resourceGroups/lab/providers/Microsoft.Network/virtualNetworks/vnet/subnets/web",
+  "/subscriptions/5a2cc279-c017-4d8a-8af0-e800c865db0c/resourceGroups/lab/providers/Microsoft.Network/virtualNetworks/vnet/subnets/db",
+]
+````
