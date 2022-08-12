@@ -18,7 +18,7 @@ terraform validate
 terraform graph | dot -Tsvg > graph.svg
 
 # plan
-terraform plan -out lab.tfplan
+terraform plan -var rg_name=lab -out lab.tfplan
 
 # deploy
 terraform apply lab.tfplan
