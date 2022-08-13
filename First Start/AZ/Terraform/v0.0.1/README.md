@@ -9,3 +9,11 @@
 
 ## graphviw
 [<img src="https://i.imgur.com/IdfUvn9.png">](https://i.imgur.com/IdfUvn9.png)
+
+---
+
+## outpus
+1. vnet_subnets 
+````tf
+terraform output
+````
