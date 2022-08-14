@@ -39,7 +39,7 @@ provider "azurerm" {
 # sec --security
 variable "rg_name_sec" {
   type    = string
-  default = "security"
+  default = "rg_security"
 }
 
 variable "location" {
@@ -89,13 +89,14 @@ data "azurerm_subscription" "sub" {}
 ###########################################
 
 # sec --security
-resource "azurerm_resource_group" "vnet_sec" {
+resource "azurerm_resource_group" "reg_sec" {
   name     = var.rg_name_sec
   location = var.location
 }
 
 # network
-module "vnet" {
+# sec --security
+module "vnet-sec" {
   source              = "Azure/vnet/azurerm"
   version             = "~>2.7.0"
   resource_group_name = var.rg_name_sec
@@ -113,7 +114,7 @@ module "vnet" {
   }
 
   depends_on = [
-    azurerm_resource_group.vnet_sec
+    azurerm_resource_group.reg_sec
   ]
 }
 
@@ -159,7 +160,7 @@ resource "azurerm_role_definition" "rol_def" {
 
 # role assignment: client
 resource "azurerm_role_assignment" "rol_assign" {
-  scope              = module.vnet.vnet_id
+  scope              = module.vnet-sec.vnet_id
   role_definition_id = azurerm_role_definition.rol_def.role_definition_resource_id
   # AAD SP --service principal
   principal_id = azuread_service_principal.sp.id
@@ -175,8 +176,8 @@ resource "local_file" "fil_ubu" {
   filename = "${path.module}/file-var-ubu.txt"
   content  = <<EOF
   # vnet
-  export TF_VAR_vnet_id=${module.vnet.vnet_id}
-  export TF_VAR_vnet_name=${module.vnet.vnet_name}
+  export TF_VAR_vnet_id=${module.vnet-sec.vnet_id}
+  export TF_VAR_vnet_name=${module.vnet-sec.vnet_name}
     
   # peering
   export TF_VAR_sp_application=${azuread_service_principal.sp.application_id}
@@ -204,11 +205,11 @@ output "aad_subscription_id" {
 }
 
 output "vnet_id" {
-  value = module.vnet.vnet_id
+  value = module.vnet-sec.vnet_id
 }
 
 output "vnet_name" {
-  value = module.vnet.vnet_name
+  value = module.vnet-sec.vnet_name
 }
 
 output "sp_id" {
