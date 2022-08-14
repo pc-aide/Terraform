@@ -180,7 +180,7 @@ resource "local_file" "fil_ubu" {
     
   # peering
   export TF_VAR_sp_application=${azuread_service_principal.sp.application_id}
-  export TF_var_sp=${azuread_service_principal.sp.id}
+  export TF_VAR_sp=${azuread_service_principal.sp.id}
 
   # cred
   export TF_var_ran_pwd='${random_password.ran_pwd.result}'
