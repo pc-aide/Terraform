@@ -29,7 +29,7 @@ provider "azurerm" {
 
 variable "rg_name" {
   type    = string
-  default = "rg-vnet-main"
+  default = "rg-main"
 }
 
 variable "location" {
