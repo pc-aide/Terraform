@@ -176,8 +176,8 @@ resource "local_file" "fil_ubu" {
   filename = "${path.module}/file-var-ubu.txt"
   content  = <<EOF
   # vnet
-  export TF_VAR_vnet_id=${module.vnet-sec.vnet_id}
-  export TF_VAR_vnet_name=${module.vnet-sec.vnet_name}
+  export TF_VAR_vnet_sec_id=${module.vnet-sec.vnet_id}
+  export TF_VAR_vnet_sec_name=${module.vnet-sec.vnet_name}
     
   # peering
   export TF_VAR_sp_application=${azuread_service_principal.sp.application_id}
@@ -191,7 +191,7 @@ resource "local_file" "fil_ubu" {
   export TF_VAR_sub_id=${data.azurerm_subscription.sub.subscription_id}
 
   # rg_name
-  export TF_VAR_rg_name=${var.rg_name_sec}
+  export TF_VAR_rg_sec_name=${var.rg_name_sec}
 
   EOF
 }
