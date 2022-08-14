@@ -184,14 +184,14 @@ resource "local_file" "fil_ubu" {
   export TF_VAR_sp=${azuread_service_principal.sp.id}
 
   # cred
-  export TF_var_ran_pwd='${random_password.ran_pwd.result}'
+  export TF_VAR_ran_pwd='${random_password.ran_pwd.result}'
   
   # subscription
-  export TF_var_sub_tenant_id=${data.azurerm_subscription.sub.tenant_id}
-  export TF_var_sub_id=${data.azurerm_subscription.sub.subscription_id}
+  export TF_VAR_sub_tenant_id=${data.azurerm_subscription.sub.tenant_id}
+  export TF_VAR_sub_id=${data.azurerm_subscription.sub.subscription_id}
 
   # rg_name
-  export TF_var_rg_name=${var.rg_name_sec}
+  export TF_VAR_rg_name=${var.rg_name_sec}
 
   EOF
 }
