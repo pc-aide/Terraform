@@ -66,7 +66,7 @@ resource "azurerm_resource_group" "rg_main" {
   location = var.location
 }
 
-module "vnet" {
+module "vnet-main" {
   source              = "Azure/vnet/azurerm"
   version             = "~>2.7.0"
   resource_group_name = var.rg_name
@@ -91,5 +91,5 @@ module "vnet" {
 ############################################
 
 output "subnet_id_with_brackets" {
-  value = module.vnet.vnet_subnets
+  value = module.vnet-main.vnet_subnets
 }
