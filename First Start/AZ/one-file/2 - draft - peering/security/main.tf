@@ -39,7 +39,7 @@ provider "azurerm" {
 # sec --security
 variable "rg_name_sec" {
   type    = string
-  default = "rg_security"
+  default = "rg-security"
 }
 
 variable "location" {
