@@ -20,7 +20,7 @@ terraform graph | dot -Tsvg > graph.svg
 terraform plan -out lab.tfplan
 
 # deploy
-# (opt) : TF_var admin_pwd=
+# (opt) : TF_VAR admin_pwd=
 terraform apply lab.tfplan
 
 # destroy
