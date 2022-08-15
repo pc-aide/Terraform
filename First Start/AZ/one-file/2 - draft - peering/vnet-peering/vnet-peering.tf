@@ -78,29 +78,28 @@ provider "azurerm" {
 # RESOURCES
 ###########################################
 
-resource "azurerm_role_definition" "vnet-peering" {
+resource "azurerm_role_definition" "rol-def" {
   name  = "allow-vnet-peer-main"
-  scope = data.azurerm_subscription.current.id
+  scope = data.azurerm_subscription.sub.id
 
   permissions {
     actions     = ["Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write", "Microsoft.Network/virtualNetworks/peer/action", "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/read", "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/delete"]
-    not_actions = []
   }
 
   assignable_scopes = [
-    data.azurerm_subscription.current.id,
+    data.azurerm_subscription.sub.id
   ]
 }
 
-resource "azurerm_role_assignment" "vnet" {
+resource "azurerm_role_assignment" "rol-assign" {
   scope              = module.vnet-main.vnet_id
-  role_definition_id = azurerm_role_definition.vnet-peering.role_definition_resource_id
-  principal_id       = var.sec_principal_id
+  role_definition_id = azurerm_role_definition.rol-def
+  principal_id       = var.principal_id
 }
 
-resource "azurerm_virtual_network_peering" "main" {
+resource "azurerm_virtual_network_peering" "vnet-peer" {
   name                      = "main_2_sec"
-  resource_group_name       = var.resource_group_name
+  resource_group_name       = var.rg_name
   virtual_network_name      = module.vnet-main.vnet_name
   remote_virtual_network_id = var.sec_vnet_id
   provider                  = azurerm.peering
