@@ -27,14 +27,24 @@ provider "azurerm" {
 # VARIABLES
 ############################################
 
-variable "rg_name" {
+variable "rg_name_main" {
   type    = string
   default = "rg-main"
+}
+
+variable "rg_name_networkWatcher" {
+  type = string
+  default = "NetworkWatcherRG"
 }
 
 variable "location" {
   type    = string
   default = "canadacentral"
+}
+
+variable "net_wat_name" {
+  type = string
+  default = "NetworkWatcher_canadacentral"
 }
 
 variable "vnet_cidr_space" {
@@ -61,15 +71,32 @@ variable "subnet_names" {
 # RESOURCES
 ############################################
 
-resource "azurerm_resource_group" "rg_main" {
-  name     = var.rg_name
+# by default: az will create automatic: NetworkWatcherRG is not exist in new rg_name
+# so i want in my terraform - most easy to destroy to the end vs manually or cli
+resource "azurerm_resource_group" "rg_networkWatcher" {
+  name = var.rg_name_networkWatcher
   location = var.location
+}
+
+resource "azurerm_resource_group" "rg_main" {
+  name     = var.rg_name_main
+  location = var.location
+}
+
+resource "azurerm_network_watcher" "net_wat" {
+  name = var.net_wat_name
+  location = var.location
+  resource_group_name = var.rg_name_networkWatcher
+
+  depends_on = [
+    azurerm_resource_group.rg_networkWatcher
+  ]
 }
 
 module "vnet-main" {
   source              = "Azure/vnet/azurerm"
   version             = "~>2.7.0"
-  resource_group_name = var.rg_name
+  resource_group_name = var.rg_name_main
   # vnet
   address_space = var.vnet_cidr_space
   vnet_name     = var.vnet_cidr_name
