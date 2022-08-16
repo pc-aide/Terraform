@@ -48,8 +48,8 @@ variable "vm_name" {
 variable "vm_size" {
   type    = string
   # Standard_DS3_v2 - no hypervisor
-  # D2s_v3 - yes hypervisor because "s"
-  default = "Standard_DS3_v2"
+  # Standard_D2s_v3 - yes hypervisor because "s"
+  default = "Standard_D2s_v3"
 }
 
 variable "admin_user" {
