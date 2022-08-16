@@ -231,9 +231,12 @@ catch{
 #################
 
 # Remove pending reeboot
-Restart-computer -force | out-file "d:\reboot_for_wsl"
-
-
+try{
+	Restart-computer -force | out-file "d:\reboot_for_wsl.txt"
+}
+catch{
+	$_ | out-file "d:\ErrorReboot.txt"
+}
 
 # test install wsl-update
 try{
