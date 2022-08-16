@@ -222,3 +222,5 @@ catch{
 
 # Remove pending reeboot
 Restart-computer
+
+# test install wsl-2
