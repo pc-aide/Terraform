@@ -231,10 +231,13 @@ catch{
 #################
 
 # Remove pending reeboot
-Restart-computer -force
+Restart-computer -force | out-file "d:\reboot_for_wsl"
+
+
 
 # test install wsl-update
 try{
+	Start-Sleep -Seconds 10
 	start msiExec -args "/i d:\wsl_update.msi /q /noRestart /l*v d:\InstallWslUpdate.txt" -wait
 }
 catch{
