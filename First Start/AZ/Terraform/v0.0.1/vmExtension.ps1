@@ -19,10 +19,20 @@ $URL_CONSUL = "https://master.dl.sourceforge.net/project/terraform/Consul%20-%20
 $URL_azcli = "https://master.dl.sourceforge.net/project/terraform/az_cli/v2.39/azure-cli-2.39.0.msi?viasf=1"
 $URL_grahviz = "https://master.dl.sourceforge.net/project/terraform/Apps/graphviz/v5.0.0/windows_10_cmake_Release_graphviz-install-5.0.0-win64.exe?viasf=1"
 $URL_python = "https://master.dl.sourceforge.net/project/terraform/Apps/python/v2.7.18/python-2.7.18.amd64.msi?viasf=1"
+$URL_wsl_update = "https://master.dl.sourceforge.net/project/terraform/Apps/DockerDesktop/wsl_update/v5.10/wsl_update_x64.msi?viasf=1"
 
 ################
 # FIlES in D:\ #
 ################
+
+# wsl_update --wsl -windows system linux
+try{
+	start-BitsTransfer $URL_wsl_update `
+	-destination "d:\wsl_update.msi"
+}
+catch{
+	$_ | out-file "d:\ErrorDlWslUpdate.txt"
+}
 
 # python 2.7.18 msi
 try{
@@ -223,4 +233,10 @@ catch{
 # Remove pending reeboot
 Restart-computer
 
-# test install wsl-2
+# test install wsl-update
+try{
+	start msiExec -args "/i d:\wsl_update.msi /q /noRestart /l*v d:\InstallWslUpdate.txt" -wait
+}
+catch{
+	$_ | out-file "d:\ErrorInstallWslUpdate.txt"
+}
