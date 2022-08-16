@@ -168,6 +168,12 @@ $NEWPATH = "$OLDPATH;$terraform;$Consul;$graphviz"
 #  CUSTOM OS   #
 ################
 
+# windows features
+# wls-1
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+# enable vm feature
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
 # acl.default (Access to the path is denied) ACL: read,execute
 $acl = get-acl $pth_OneDriveSetup
 # new rule
@@ -209,3 +215,10 @@ catch{
 # Remove icons pinned to TaskBar
 # try this in futur : Import-StartLayout -MountPath $env:systemdrive\ -LayoutPath "StartLayout.bin"
 #ri "C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\*" -EA 0
+
+#################
+# PendingReboot #
+#################
+
+# Remove pending reeboot
+Restart-computer
