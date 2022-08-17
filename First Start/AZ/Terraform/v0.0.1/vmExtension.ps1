@@ -132,7 +132,7 @@ $ScriptLogon = @"
 try{
 	start msiExec "/i wsl_update.msi /q /noRestart /l*v d:\InstallWsl.txt"
 }
-catc{
+catch{
 	$_ | out-file d:\ErrorInstallWslUpdate.txt
 }
 "@
