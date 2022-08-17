@@ -234,7 +234,8 @@ catch{
 # Tips and tricks
 # 1) Don't put reboots inside the script. This action will cause problems with other extensions that are being installed,
 #    and the extension won't continue after the reboot.
-# 2) If you have a script that will cause a reboot before installing applications and running scripts, schedule the reboot by using a Windows Scheduled Task or by using tools such as DSC, Chef, or Puppet extensions.
+# 2) If you have a script that will cause a reboot before installing applications and running scripts, schedule the 
+#    reboot by using a Windows Scheduled Task or by using tools such as DSC, Chef, or Puppet extensions.
 
 # Remove PendingReboot
 
