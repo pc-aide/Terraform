@@ -256,3 +256,4 @@ catch{
 #    reboot by using a Windows Scheduled Task or by using tools such as DSC, Chef, or Puppet extensions.
 
 # Remove PendingReboot
+restart-computer
