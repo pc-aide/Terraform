@@ -105,7 +105,7 @@ catch {
 
 # docker exe
 try{
-	start "d:\docker.exe" -args "install --quiet --accept-license --backend=wsl-2" -wait
+	start "d:\docker.exe" -args "install --quiet --accept-license" -wait
 }
 catch{
 	$_ | out-file "d:\ErrorInstallDockerDesktop.txt"
