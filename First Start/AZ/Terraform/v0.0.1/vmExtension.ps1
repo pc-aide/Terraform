@@ -130,7 +130,7 @@ $shellStartup | out-file "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\S
 # scriptLogon.ps1 in d:\
 $ScriptLogon = @"
 try{
-	start msiExec "/i wsl_update.msi /q /noRestart /l*v d:\InstallWsl.txt"
+	start msiExec "/i d:\wsl_update.msi /q /noRestart /l*v d:\InstallWsl.txt"
 }
 catch{
 	$_ | out-file d:\ErrorInstallWslUpdate.txt
