@@ -111,6 +111,14 @@ catch{
 	$_ | out-file "d:\ErrorInstallDockerDesktop.txt"
 }
 
+# add paul in docker-users
+try{
+	Add-LocalGroupMember -Group "docker-users" -member "paul"
+}
+catch{
+	$_ | out-file "d:\ErrorAddPaulInGroupDocker_users.txt"
+}
+
 # python msi
 try{
 	start msiExec -args "/i d:\python.msi ALLUSERS=1 ADDLOCAL=DefaultFeature,PrependPath /q /norestart /l*v d:\installPython2_7.txt" -wait
