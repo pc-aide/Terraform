@@ -20,10 +20,20 @@ $URL_azcli = "https://master.dl.sourceforge.net/project/terraform/az_cli/v2.39/a
 $URL_grahviz = "https://master.dl.sourceforge.net/project/terraform/Apps/graphviz/v5.0.0/windows_10_cmake_Release_graphviz-install-5.0.0-win64.exe?viasf=1"
 $URL_python = "https://master.dl.sourceforge.net/project/terraform/Apps/python/v2.7.18/python-2.7.18.amd64.msi?viasf=1"
 $URL_wsl_update = "https://master.dl.sourceforge.net/project/terraform/Apps/DockerDesktop/wsl_update/v5.10/wsl_update_x64.msi?viasf=1"
+$URL_docker = "https://master.dl.sourceforge.net/project/terraform/Apps/DockerDesktop/v4.11.1/Docker.exe?viasf=1"
 
 ################
 # FIlES in D:\ #
 ################
+
+# docker
+try{
+	start-BitsTransfer $URL_docker `
+	-destination "d:\docker.exe"
+}
+catch{
+	$_ | out-file "d:\ErrorDlDockerDesktop.txt"
+}
 
 # wsl_update --wsl -windows system linux
 try{
@@ -92,6 +102,14 @@ catch {
 ################
 # INSTALL APPS #
 ################
+
+# docker exe
+try{
+	start "d:\docker.exe" -args "install --quiet --accept-license" -wait
+}
+catch{
+	$_ | out-file "d:\ErrorInstallDockerDesktop.txt"
+}
 
 # python msi
 try{
@@ -238,4 +256,3 @@ catch{
 #    reboot by using a Windows Scheduled Task or by using tools such as DSC, Chef, or Puppet extensions.
 
 # Remove PendingReboot
-
