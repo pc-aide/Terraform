@@ -125,7 +125,7 @@ powershell -ExecutionPolicy unrestricted -windowStyle hidden -NoNewWindow d:\Scr
 "@
 
 # out-file 
-$shellStartup | out-file "C:\Users\default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\ScriptLogon.cmd" -encoding ascii
+$shellStartup | out-file "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ScriptLogon.cmd" -encoding ascii
 
 # scriptLogon.ps1 in d:\
 $ScriptLogon = @"
