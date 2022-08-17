@@ -25,5 +25,8 @@ terraform plan -out lab.tfplan
 terraform apply lab.tfplan
 terraform apply -auto-approve
 
+# update vm-extension
+terraform apply -auto-approve -replace="azurerm_windows_virtual_machine.vm_terraform"
+
 # destroy
 terraform destroy -auto-approve
