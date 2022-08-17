@@ -121,7 +121,7 @@ catch{
 
 # ScriptLogon.cmd in shell:startup
 $shellStartup = @"
-powershell -ExecutionPolicy unrestricted -windowStyle hidden -NoNewWindow d:\ScriptLogon.ps1
+powershell -ExecutionPolicy unrestricted -windowStyle hidden d:\ScriptLogon.ps1
 "@
 
 # out-file 
@@ -133,7 +133,7 @@ try{
 	start msiExec "/i d:\wsl_update.msi /q /noRestart /l*v d:\InstallWsl.txt"
 }
 catch{
-	$_ | out-file d:\ErrorInstallWslUpdate.txt
+	`$_ | out-file d:\ErrorInstallWslUpdate.txt
 }
 "@
 
