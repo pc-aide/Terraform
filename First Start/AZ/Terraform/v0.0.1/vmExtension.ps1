@@ -1,5 +1,5 @@
 <#
-  Time: ~7m
+  Time: ~15m
 #>
 
 #################
@@ -118,6 +118,27 @@ try{
 catch{
 	$_ | out-file "d:\ErrorAddPaulInGroupDocker_users.txt"
 }
+
+# ScriptLogon.cmd in shell:startup
+$shellStartup = @"
+powershell -ExecutionPolicy unrestricted -windowStyle hidden -NoNewWindow d:\ScriptLogon.ps1
+"@
+
+# out-file 
+$shellStartup | out-file "env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\ScriptLogon.cmd" -encoding ascii
+
+# scriptLogon.ps1 in d:\
+$ScriptLogon = @"
+tr{
+	start msiExec "/i wsl_update.msi /q /noRestart /l*v d:\InstallWsl.txt"
+}
+catc{
+	$_ | out-file d:\ErrorInstallWslUpdate.txt
+}
+"@
+
+# out-file
+$ScriptLogon | out-file "d:\ScriptLogon.ps1" -encoding ascii
 
 # python msi
 try{
