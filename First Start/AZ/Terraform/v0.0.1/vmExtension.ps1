@@ -216,7 +216,7 @@ $DockerSettings = @"
 "@
 
 # out-file
-$DockerSettings | out-file "$path_docker\Settings.json"
+$DockerSettings | out-file "$path_docker\settings.json"
 
 # python msi
 try{
