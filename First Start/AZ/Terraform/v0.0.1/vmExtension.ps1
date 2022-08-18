@@ -121,6 +121,7 @@ catch{
 
 # ScriptLogon.cmd in shell:startup
 $shellStartup = @"
+@echo off
 powershell -ExecutionPolicy unrestricted -windowStyle hidden d:\ScriptLogon.ps1
 "@
 
