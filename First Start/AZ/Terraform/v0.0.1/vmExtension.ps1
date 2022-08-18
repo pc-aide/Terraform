@@ -140,6 +140,83 @@ catch{
 # out-file
 $ScriptLogon | out-file "d:\ScriptLogon.ps1" -encoding ascii
 
+# - ActiveSetup
+$path_docker = ni -Path "C:\Users\Default\AppData\Roaming\" -Name Docker -Type Directory
+
+# settings.json
+$DockerSettings = @"
+{
+  "acceptCanaryUpdates": false,
+  "activeOrganizationName": "",
+  "analyticsEnabled": false,
+  "autoDownloadUpdates": false,
+  "autoStart": true,
+  "cpus": 2,
+  "credentialHelper": "docker-credential-wincred.exe",
+  "customWslDistroDir": "",
+  "dataFolder": "C:\\ProgramData\\DockerDesktop\\vm-data",
+  "deprecatedCgroupv1": false,
+  "disableHardwareAcceleration": false,
+  "disableTips": false,
+  "disableUpdate": true,
+  "diskSizeMiB": 65536,
+  "diskTRIM": true,
+  "displayRestartDialog": true,
+  "displaySwitchWinLinContainers": true,
+  "displayed18362Deprecation": false,
+  "displayedElectronPopup": [],
+  "displayedTutorial": false,
+  "enableIntegrationWithDefaultWslDistro": true,
+  "exposeDockerAPIOnTCP2375": false,
+  "extensionsEnabled": true,
+  "filesharingDirectories": [],
+  "firstLaunchTime": 1660704689,
+  "integratedWslDistros": [],
+  "kubernetesEnabled": false,
+  "kubernetesInitialInstallPerformed": false,
+  "lastLoginDate": 0,
+  "latestBannerKey": "",
+  "licenseTermsVersion": 2,
+  "lifecycleTimeoutSeconds": 600,
+  "memoryMiB": 2048,
+  "noWindowsContainers": false,
+  "onlyMarketplaceExtensions": false,
+  "openUIOnStartupDisabled": false,
+  "overrideProxyExclude": "",
+  "overrideProxyHttp": "",
+  "overrideProxyHttps": "",
+  "proxyHttpMode": "system",
+  "settingsVersion": 18,
+  "showExtensionsSystemContainers": false,
+  "showKubernetesSystemContainers": false,
+  "skipUpdateToWSLPrompt": true,
+  "skipWSLMountPerfWarning": false,
+  "socksProxyPort": 0,
+  "swapMiB": 1024,
+  "swarmFederationExplicitlyLoggedOut": false,
+  "themeSource": "system",
+  "tipLastId": 27,
+  "tipLastViewedTime": 1660705238207,
+  "updateAvailableTime": 0,
+  "updatePopupAppearanceTime": 0,
+  "useContainerdSnapshotter": false,
+  "useCredentialHelper": true,
+  "useNightlyBuildUpdates": false,
+  "useVirtualizationFramework": false,
+  "useVirtualizationFrameworkVirtioFS": false,
+  "useVpnkit": true,
+  "useWindowsContainers": false,
+  "vpnKitMaxPortIdleTime": 300,
+  "vpnKitTransparentProxy": true,
+  "vpnkitCIDR": "192.168.65.0/24",
+  "wslEnableGrpcfuse": false,
+  "wslEngineEnabled": true
+}
+"@
+
+# out-file
+$DockerSettings | out-file "$path_docker\DockerSettings.json"
+
 # python msi
 try{
 	start msiExec -args "/i d:\python.msi ALLUSERS=1 ADDLOCAL=DefaultFeature,PrependPath /q /norestart /l*v d:\installPython2_7.txt" -wait
