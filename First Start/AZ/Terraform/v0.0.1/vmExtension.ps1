@@ -158,7 +158,7 @@ $DockerSettings = @"
   "dataFolder": "C:\\ProgramData\\DockerDesktop\\vm-data",
   "deprecatedCgroupv1": false,
   "disableHardwareAcceleration": false,
-  "disableTips": false,
+  "disableTips": true,
   "disableUpdate": true,
   "diskSizeMiB": 65536,
   "diskTRIM": true,
