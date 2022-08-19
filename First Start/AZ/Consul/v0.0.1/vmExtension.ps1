@@ -78,7 +78,7 @@ $acl | Set-Acl $pth_OneDriveSetup
 try{
   ri $pth_OneDriveSetup -force  
 }catch{
-  $_	 | out-file "d:\ErrorRemoveOneDriveSetup.log"
+  $_	 | out-file "d:\ErrorRemoveOneDriveSetup.txt"
 }
 
 # Turn off the Network Location wizard
