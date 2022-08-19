@@ -40,7 +40,7 @@ resource "azurerm_virtual_machine_extension" "vm_extension" {
 
   settings           = <<SETTINGS
     {
-        "fileUris": ["https://raw.githubusercontent.com/pc-aide/Terraform/main/First%20Start/AZ/Terraform/v0.0.1/vmExtension.ps1"]
+        "fileUris": ["https://raw.githubusercontent.com/pc-aide/Terraform/main/First%20Start/AZ/Consul/v0.0.1/vmExtension.ps1"]
     }
 SETTINGS
   protected_settings = <<PROTECTED_SETTINGS
