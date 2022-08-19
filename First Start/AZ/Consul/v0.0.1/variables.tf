@@ -30,7 +30,7 @@ variable "subnet_names" {
 
 variable "sg_rdp" {
   type    = string
-  default = "sg-rdp"
+  default = "sg-rdp-nic"
 }
 
 variable "sec_rule_name" {
