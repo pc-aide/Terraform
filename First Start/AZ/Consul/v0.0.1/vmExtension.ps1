@@ -13,6 +13,7 @@ $pth_OneDriveSetup = "C:\Windows\SysWOW64\OneDriveSetup.exe"
 # URL
 $URL_vsCode = "https://master.dl.sourceforge.net/project/terraform/vsCode/1.69/VSCodeSetup-x64-1.69.2.exe?viasf=1"
 $URL_CONSUL = "https://master.dl.sourceforge.net/project/terraform/Consul%20-%20win%20bin/1.12.2/consul.exe?viasf=1"
+$URL_gitx64 = "https://master.dl.sourceforge.net/project/terraform/Git/Git-2.37.0-64-bit.exe?viasf=1"
 
 #######################################################
 # FIlES in D:\ 
@@ -26,6 +27,15 @@ try {
 }
 catch {
 	$_ | out-file "d:\ErrorDownloadVsCode.txt"
+}
+
+# Git-x64
+try{
+	Start-BitsTransfer $URL_gitx64 `
+	-destination "d:\git.exe"
+}
+catch{
+	$_ | out-file "d:\ErrorDownloadGit.txt"
 }
 
 #######################################################
@@ -50,6 +60,14 @@ try {
 }
 catch{
 	$_ | out-file "d:\ErrorInstallConsul.txt"
+}
+
+# git-x64
+try{
+	start "d:\git.exe" -args "/VERYSILENT /NORESTART /LOG=d:\InstallGit.txt" -wait
+}
+catch{
+	$_ | out-file "d:\ErrorInstallGit.txt"
 }
 
 #######################################################
