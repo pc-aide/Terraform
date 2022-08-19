@@ -35,7 +35,7 @@ variable "sg_rdp" {
 
 variable "sec_rule_name" {
   type    = string
-  default = "AllowInboundRDP"
+  default = "AllowRDPInbound"
 }
 
 variable "pip_name" {
