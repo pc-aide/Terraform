@@ -11,7 +11,7 @@ resource "azurerm_network_security_group" "sg_rdp" {
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    source_address_prefix      = "*"
+    source_address_prefix      = var.src_add_prefix
     destination_port_range     = "3389"
     destination_address_prefix = "*"
     description                = "Allow inbound RDP"
