@@ -35,6 +35,12 @@ variable "sg_name" {
   default = "vm-sg-nic-rdp"
 }
 
+# 
+variable "src_add_prefix" {
+  type = string
+  description = "Put your IP for the access RDP"
+}
+
 variable "vm_nic" {
   type    = string
   default = "vm-nic"
