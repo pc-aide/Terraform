@@ -14,7 +14,6 @@ terraform init
 terraform validate
 
 # graph with graphviz (dot)
-# dot -V --to test if command work
 terraform graph | dot -Tsvg > graph.svg
 
 # plan
