@@ -7,6 +7,16 @@
 
 ---
 
+## syntax
+````tf
+TF_VAR <VarName>
+
+eg:
+TF_var admin_pwd=
+````
+
+---
+
 ## List
 |n|name|e.g.|O/P|
 |-|----|----|---|
