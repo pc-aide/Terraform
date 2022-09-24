@@ -18,6 +18,7 @@
 |10|show|terraform show|[<img src="https://i.imgur.com/yQ4D9nJ.png">](https://i.imgur.com/yQ4D9nJ.png)|
 |11|configuration drift| # checkUp any cfg drift <br/> terraform plan -refresh-only <br/> or <br/> terraform apply -refresh-only||
 |12|apply|terraform apply -replace=azurerm_virtual_network.vnet|[<img src="https://i.imgur.com/7UQnmYb.png">](https://i.imgur.com/7UQnmYb.png)|
+|13|variable|terraform apply -auto-approve -var variable_name="value"||
   
 ---
   
