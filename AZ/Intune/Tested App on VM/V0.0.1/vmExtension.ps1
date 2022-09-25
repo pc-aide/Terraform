@@ -24,125 +24,13 @@ $URL_python = "https://master.dl.sourceforge.net/project/terraform/Apps/python/v
 # FIlES in D:\ #
 ################
 
-# python 2.7.18 msi
-try{
-	start-BitsTransfer $URL_python `
-	-destination "d:\python.msi"
-}
-catch{
-	$_ | out-file "d:\ErrorDlPython.txt"
-}
 
-# az_cli_v2_msi
-try{
-  start-BitsTransfer $URL_azcli `
-  -destination "d:\azcli.msi"
-}
-catch{
-  $_ | out-file "d:\ErrorDownloadAzcliv2.txt"
-}
-
-# AWS_cli_v2_msi
-try{
-	Start-BitsTransfer $URL_AWSCLIV2 `
-	-destination "d:\awscliv2.msi"
-}
-catch{
-	$_ | out-file "d:\ErrorDownloadAwsCliV2.txt"
-}
-
-# Git-x64
-try{
-	Start-BitsTransfer $URL_gitx64 `
-	-destination "d:\git.exe"
-}
-catch{
-	$_ | out-file "d:\ErrorDownloadGit.txt"
-}
-
-# vsCode
-try {
-	Start-BitsTransfer $URL_vsCode `
-	-destination "d:\vsCode.exe"
-		
-}
-catch {
-	$_ | out-file "d:\ErrorDownloadVsCode.txt"
-}
 
 ################
 # INSTALL APPS #
 ################
 
-# python msi
-try{
-	start msiExec -args "/i d:\python.msi ALLUSERS=1 ADDLOCAL=DefaultFeature,PrependPath /q /norestart /l*v d:\installPython2_7.txt" -wait
-}
-catch{
-	$_ | out-file "d:\ErrorInstPython.txt"
-}
 
-# az_cli_v2_msi
-try{
-  start msiExec -args "/i d:\azcli.msi /q /noRestart /l*v d:\installAzCliv2.log" -wait
-}
-catch{
-  $_ | out-file "d:\ErrorInstallAzCliv2.log"
-}
-
-# AWS_cli_v2_msi
-try{
-	start msiExec -args "/i d:\awscliv2.msi /q /noRestart /l*v d:\installAwsCliv2.log" -wait
-}
-catch{
-	$_ | out-file "d\ErrorInstallAwsCliV2.log"
-}
-
-# git-x64
-try{
-	start "d:\git.exe" -args "/VERYSILENT /NORESTART /LOG=d:\InstallGit.txt" -wait
-}
-catch{
-	$_ | out-file "d:\ErrorInstallGit.txt"
-}
-
-# Terraform bin (.exe)
-try {
-	ni -name terraform C:\ -type Directory
-	Start-BitsTransfer $URL_terraform_exe `
-	-destination "C:\terraform\terraform.exe"
-}
-catch {
-	$_ | out-file "d:\ErrorInstallterraform.txt"
-}
-
-# vsCode
-try {
-	start "d:\vsCode.exe" -args "/VERYSILENT /NORESTART /MERGETASKS=!runcode,addtopath /log=d:\IntallVsCode.txt" -wait
-}
-catch {
-	$_ | out-file "d:\ErrorInstallVsCode.txt"
-}
-
-# Consul.exe
-try {
-	# New InstallDir
-	ni -Name Consul C:\ -type Directory
-	# Download consul.exe bin
-	Start-BitsTransfer $URL_CONSUL `
-	-destination "C:\Consul\consul.exe"
-}
-catch{
-	$_ | out-file "d:\ErrorInstallConsul_exe_bin.log"
-}
-
-# add terraform, vsCode, & git folders in the $Path
-# run\code --to open vsCode
-$OLDPATH = [System.Environment]::GetEnvironmentVariable('PATH','machine')
-$terraform = "C:\terraform"
-$Consul = "C:\Consul\"
-$NEWPATH = "$OLDPATH;$terraform;$Consul"
-[Environment]::SetEnvironmentVariable("PATH", "$NEWPATH", "Machine")
 
 ################
 #  CUSTOM OS   #
