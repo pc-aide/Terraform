@@ -11,7 +11,7 @@ $ErrorActionPreference = "stop"
 $pth_OneDriveSetup = "C:\Windows\SysWOW64\OneDriveSetup.exe"
 
 # URL
-
+$URL_vsCode = "https://master.dl.sourceforge.net/project/terraform/vsCode/1.69/VSCodeSetup-x64-1.69.2.exe?viasf=1"
 
 #######################################################
 # FIlES in D:\ 
