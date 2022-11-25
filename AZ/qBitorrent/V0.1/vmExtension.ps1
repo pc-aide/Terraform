@@ -11,7 +11,7 @@ $ErrorActionPreference = "stop"
 $pth_OneDriveSetup = "C:\Windows\SysWOW64\OneDriveSetup.exe"
 
 # URL
-$URL_vsCode = "https://master.dl.sourceforge.net/project/terraform/vsCode/1.69/VSCodeSetup-x64-1.69.2.exe?viasf=1"
+$URL_qBitorrent = "https://master.dl.sourceforge.net/project/terraform/vsCode/1.69/VSCodeSetup-x64-1.69.2.exe?viasf=1"
 
 #######################################################
 # FIlES in D:\ 
@@ -32,7 +32,7 @@ catch {
 # INSTALL APPS 
 #######################################################
 
-# vs code 
+# qBitorrent
 try {
 	start "d:\vsCode.exe" -args "/VERYSILENT /NORESTART /MERGETASKS=!runcode,addtopath /log=d:\IntallVsCode.txt" -wait
 }
