@@ -11,7 +11,7 @@ $ErrorActionPreference = "stop"
 $pth_OneDriveSetup = "C:\Windows\SysWOW64\OneDriveSetup.exe"
 
 # URL
-$URL_qBitorrent = "https://master.dl.sourceforge.net/project/terraform/vsCode/1.69/VSCodeSetup-x64-1.69.2.exe?viasf=1"
+$URL_qBitorrent = "https://cfhcable.dl.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.5.4/qbittorrent_4.5.4_lt20_qt6_x64_setup.exe"
 
 #######################################################
 # FIlES in D:\ 
@@ -20,11 +20,11 @@ $URL_qBitorrent = "https://master.dl.sourceforge.net/project/terraform/vsCode/1.
 # qBitorrent
 try {
 	Start-BitsTransfer $URL_vsCode `
-	-destination "d:\vsCode.exe"
+	-destination "d:\qbittorrent.exe"
 		
 }
 catch {
-	$_ | out-file "d:\ErrorDownloadVsCode.txt"
+	$_ | out-file "d:\ErrorDownloadQbittorrent.txt"
 }
 
 
@@ -33,12 +33,13 @@ catch {
 #######################################################
 
 # qBitorrent
-try {
+<# try {
 	start "d:\vsCode.exe" -args "/VERYSILENT /NORESTART /MERGETASKS=!runcode,addtopath /log=d:\IntallVsCode.txt" -wait
 }
 catch {
-	$_ | out-file "d:\ErrorInstallVsCode.txt"
+	$_ | out-file "d:\ErrorInstallQbittorrent.txt"
 }
+#>
 
 #######################################################
 #  ENV PATH
