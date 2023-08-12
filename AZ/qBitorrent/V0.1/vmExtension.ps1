@@ -11,15 +11,15 @@ $ErrorActionPreference = "stop"
 $pth_OneDriveSetup = "C:\Windows\SysWOW64\OneDriveSetup.exe"
 
 # URL
-$URL_qBitorrent = "https://cfhcable.dl.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.5.4/qbittorrent_4.5.4_lt20_qt6_x64_setup.exe"
+$URL_qbittorrent = "https://cfhcable.dl.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.5.4/qbittorrent_4.5.4_lt20_qt6_x64_setup.exe"
 
 #######################################################
 # FIlES in D:\ 
 #######################################################
 
-# qBitorrent
+# vs qbittorent
 try {
-	Start-BitsTransfer $URL_vsCode `
+	Start-BitsTransfer $URL_qbittorrent `
 	-destination "d:\qbittorrent.exe"
 		
 }
@@ -32,14 +32,13 @@ catch {
 # INSTALL APPS 
 #######################################################
 
-# qBitorrent
-<# try {
-	start "d:\vsCode.exe" -args "/VERYSILENT /NORESTART /MERGETASKS=!runcode,addtopath /log=d:\IntallVsCode.txt" -wait
+# vs qbittorrent 
+try {
+  start "d:\qbittorrent.exe" -args "/S" -Wait
 }
 catch {
-	$_ | out-file "d:\ErrorInstallQbittorrent.txt"
+  $_ | out-file "d:\ErrorInstallQbittorent.txt"
 }
-#>
 
 #######################################################
 #  ENV PATH
@@ -102,3 +101,6 @@ catch{
 #    and the extension won't continue after the reboot.
 # 2) If you have a script that will cause a reboot before installing applications and running scripts, schedule the 
 #    reboot by using a Windows Scheduled Task or by using tools such as DSC, Chef, or Puppet extensions.
+
+# Remove PendingReboot
+# restart-computer
